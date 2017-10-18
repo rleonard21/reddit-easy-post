@@ -1,0 +1,10 @@
+username=
+password=
+client-id=
+client-secret=
+subreddit=
+submission-day=
+submission-hour=
+submission-text=
+submission-title=
+submission-text=
