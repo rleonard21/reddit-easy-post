@@ -9,8 +9,10 @@ at a given time. This is a simple Python script to cover that need!
 #### Dependencies
 This script has only one dependency: PRAW. This is the API Wrapper used for interfacing with
 the Reddit API. It can be installed with pip:
+```commandline
+pip3 install praw
+```
 
-`pip3 install praw`
 
 More information about installing PRAW can be found here:
 http://praw.readthedocs.io/en/latest/getting_started/installation.html
@@ -54,20 +56,24 @@ first line of this file will be included in your post. Have fun!
 Here the title will be `Hello world!` and the body will be `This is the body...` and everything
 after that. 
 
-### Installation
-This script runs on any Linux (or mac) based computer using the crontab service. 
+### Cron Installation
+This script runs on any Linux (or Mac) based computer using the crontab service. 
 
 Open a terminal and clone this repository into your working directory:
 
-`git clone https://github.com/rleonard21/reddit-easy-post.git`
+```commandline
+git clone https://github.com/rleonard21/reddit-easy-post.git
+```
 
 Then edit your crontab by running the following command:
-
-`crontab -e`
-
+```commandline
+crontab -e
+```
 When the crontab file opens in the text editor, enter the following at the bottom:
 
-`min hr day mon dow python3 /path/to/directory/post-cron.py`
+```commandline
+min hr day mon dow python3 /path/to/directory/post-cron.py
+```
 
 Where `min`, `hr`, `day`, `mon`, and `dow` represent the time at which to run the script. 
 How to set up the time will not be explained here, as it is covered in
