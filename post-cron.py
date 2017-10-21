@@ -3,9 +3,9 @@ import datetime
 import os.path
 
 # open the config file as read-only
-input_file = open('config.txt', 'r')
-config_settings = input_file.readlines()
-input_file.close()
+config_file = open('config.txt', 'r')
+config_settings = config_file.readlines()
+config_file.close()
 
 # make sure all of the configuration fields have been filled except for the submission time related
  # ones, which don't matter for this crontab-based script
@@ -18,14 +18,29 @@ for config in config_settings:
 # note the '.rstrip()' method being called on each string - this removes any newlines
 username = config_settings[0][9:].rstrip()
 password = config_settings[1][9:].rstrip()
-
 client_id = config_settings[2][10:].rstrip()
 client_secret = config_settings[3][14:].rstrip()
-
 subreddit = config_settings[4][10:].rstrip()
-submission_title = config_settings[8][17:].rstrip()
-submission_text = config_settings[9][16:].rstrip()
 
+
+# open the content.txt file as read-only
+content_file = open('content.txt', 'r')
+
+# bring all of the lines from the content file into the content variable
+content = content_file.readlines()
+
+# if configured correctly, the title will be the first line in the program
+submission_title = content[0]
+
+submission_body = ''
+
+# and the subsequent lines will be the body of the submission
+for line in content:
+    # skip the title line
+    if line == submission_title:
+        continue
+
+    submission_body += line.rstrip() + '\n'
 
 # open/create a log file to dump whether the scrip was successful or not
 if os.path.isfile('log.txt'):
