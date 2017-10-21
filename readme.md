@@ -1,12 +1,12 @@
-# Title!
+# Reddit Easy Post Bot!
 
-###About
+### About
 There have been a few threads in /r/redditdev regarding an easy way to automatically submit a post
 at a given time. This is a simple Python script to cover that need!
 
-###Setup
+### Setup
 Using this program is rather simple. 
-#####Dependencies
+##### Dependencies
 This script has only one dependency: PRAW. This is the API Wrapper used for interfacing with
 the Reddit API. It can be installed with pip:
 
@@ -15,7 +15,7 @@ the Reddit API. It can be installed with pip:
 More information about installing PRAW can be found here:
 http://praw.readthedocs.io/en/latest/getting_started/installation.html
 
-#####Configuration
+##### Configuration
 Most of the work is done in the `config.txt` file. 
 This script uses a configuration file to determine the account credentials. The contents of
 the `config.txt` file are as follows:
@@ -30,7 +30,7 @@ A quick note here: Fields such as `username` and `subreddit` do not include the 
 slashes. For example, the username should be `username` instead of `/u/username`, and the 
 subreddit should be like `redditdev` rather than `/r/redditdev`.
 
-#####Client ID and Client Secret
+##### Client ID and Client Secret
 In order to make your account access the Reddit API, it must be a developer account. 
 This can be done by going into account preferences, then click apps. This panel should allow you 
 to create a bot for the account and get the ID and Secret. 
@@ -41,7 +41,7 @@ http://progur.com/2016/09/how-to-create-reddit-bot-using-praw4#registering-the-b
 
 
 
-###Installation
+### Installation
 This script runs on any Linux (or mac) based computer using the crontab service. 
 
 Open a terminal and clone this repository into your working directory:
