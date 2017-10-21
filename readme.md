@@ -5,8 +5,8 @@ There have been a few threads in /r/redditdev regarding an easy way to automatic
 at a given time. This is a simple Python script to cover that need!
 
 ### Setup
-Using this program is rather simple. 
-##### Dependencies
+ 
+#### Dependencies
 This script has only one dependency: PRAW. This is the API Wrapper used for interfacing with
 the Reddit API. It can be installed with pip:
 
@@ -15,7 +15,8 @@ the Reddit API. It can be installed with pip:
 More information about installing PRAW can be found here:
 http://praw.readthedocs.io/en/latest/getting_started/installation.html
 
-##### Configuration
+
+#### Configuration
 Most of the work is done in the `config.txt` file. 
 This script uses a configuration file to determine the account credentials. The contents of
 the `config.txt` file are as follows:
@@ -30,16 +31,28 @@ A quick note here: Fields such as `username` and `subreddit` do not include the 
 slashes. For example, the username should be `username` instead of `/u/username`, and the 
 subreddit should be like `redditdev` rather than `/r/redditdev`.
 
-##### Client ID and Client Secret
+
+#### Client ID and Client Secret
 In order to make your account access the Reddit API, it must be a developer account. 
 This can be done by going into account preferences, then click apps. This panel should allow you 
 to create a bot for the account and get the ID and Secret. 
 A good guide can be found here:
+
 http://progur.com/2016/09/how-to-create-reddit-bot-using-praw4#registering-the-bot
 
-
-
-
+#### Submission Content!
+This script uses the supplied `content.txt` file for the content of the submission. Edit
+this file in your favorite text editor. Remember, Reddit's posts use Markdown for formatting!
+Plenty of information about can be found online. 
+The first line of this file will be the title of the post. Anything after that is the content
+of the submission! Here's an example `content.txt` file to help:
+```buildoutcfg
+Hello world!
+This is the body of your submission. Anything following the 
+first line of this file will be included in your post. Have fun!
+```
+Here the title will be `Hello world!` and the body will be `This is the body...` and everything
+after that. 
 
 ### Installation
 This script runs on any Linux (or mac) based computer using the crontab service. 
