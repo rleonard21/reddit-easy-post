@@ -81,3 +81,6 @@ many other resources:
 http://www.adminschoice.com/crontab-quick-reference
 
 Once this is setup on crontab, the Reddit account will post by itself at the specific intervals!
+
+### Modifying the Post Content
+If you started the bot and wanted it to post something different, all that needs to be done is to modify the material inside of `content.txt`. When the bot posts next, it will use the updated content in the file. 
