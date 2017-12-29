@@ -1,12 +1,11 @@
 import praw
-import datetime
 import logging
 
 logging.basicConfig(filename='reddit.log',level=logging.INFO,
                     format='%(asctime)s %(levelname)s : %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 # open the config file as read-only
-config_file = open('config.TEST', 'r')
+config_file = open('config.txt', 'r')
 config_settings = config_file.readlines()
 config_file.close()
 
