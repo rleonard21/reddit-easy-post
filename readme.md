@@ -57,7 +57,7 @@ Here the title will be `Hello world!` and the body will be `This is the body...`
 after that. 
 
 ### Cron Installation
-This script runs on any Linux (or Mac) based computer using the crontab service. 
+This script is intended to run on a Linux (or Mac) based computer using the crontab service. This can easily be accomplished using a Desktop, Raspberry Pi, or a service such as Amazon AWS. 
 
 Open a terminal and clone this repository into your working directory:
 
