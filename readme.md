@@ -7,10 +7,10 @@ at a given time. This is a simple Python script to cover that need!
 ### Setup
  
 #### Dependencies
-This script has only one dependency: PRAW. This is the API Wrapper used for interfacing with
+This script uses Python 3.6 and has only one dependency: PRAW. This is the API Wrapper used for interfacing with
 the Reddit API. It can be installed with pip:
 ```commandline
-pip3 install praw
+$ pip3 install praw
 ```
 
 
@@ -62,17 +62,17 @@ This script is intended to run on a Linux (or Mac) based computer using the cron
 Open a terminal and clone this repository into your working directory:
 
 ```commandline
-git clone https://github.com/rleonard21/reddit-easy-post.git
+$ git clone https://github.com/rleonard21/reddit-easy-post.git
 ```
 
 Then edit your crontab by running the following command:
 ```commandline
-crontab -e
+$ crontab -e
 ```
 When the crontab file opens in the text editor, enter the following at the bottom:
 
 ```commandline
-min hr day mon dow python3 /path/to/directory/post-cron.py
+min hr day mon dow python3 /full/path/post-cron.py
 ```
 
 Where `min`, `hr`, `day`, `mon`, and `dow` represent the time at which to run the script. 
@@ -82,5 +82,19 @@ http://www.adminschoice.com/crontab-quick-reference
 
 Once this is setup on crontab, the Reddit account will post by itself at the specific intervals!
 
+### Cron Alternative
+Something that I've found useful a few times is the ability to post only once at a certain time. 
+This can be done using the `at` tool in Linux. Installation is as such:
+```commandline
+$ sudo apt-get install at
+```
+And setting up the one-time post is just as easy:
+```commandline
+$ echo "python3 /full/path/post-cron.py" | at 9:00AM
+```
+A good walkthrough of `at` can be found here: 
+https://tecadmin.net/one-time-task-scheduling-using-at-commad-in-linux/
+
 ### Modifying the Post Content
-If you started the bot and wanted it to post something different, all that needs to be done is to modify the material inside of `content.txt`. When the bot posts next, it will use the updated content in the file. 
+If you setup the script and wanted it to post something different, all that needs to be done is to modify the material inside of `content.txt`. 
+When the bot posts next, it will use the updated content in the file. 
