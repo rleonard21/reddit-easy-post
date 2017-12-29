@@ -11,7 +11,7 @@ config_file.close()
  # ones, which don't matter for this crontab-based script
 for config in config_settings:
     if config[-2:] == '=\n' and config[:10] != 'submission':
-        raise('Error: Configuration field left blank!')
+        raise Exception('Configuration field left blank!')
 
 
 # begin parsing the information from the configuration file into usable variables
@@ -59,7 +59,7 @@ try:
 
     # create an instance of the subreddit class and submit the post!
     target_subreddit = reddit.subreddit(subreddit)
-    target_subreddit.submit(title=submission_title, selftext=submission_text, url=None, resubmit=True, send_replies=True)
+    target_subreddit.submit(title=submission_title, selftext=submission_body, url=None, resubmit=True, send_replies=True)
 
     # output to the logfile
     log_file.write(str(datetime.datetime.now()) + '  :  Success\n')
